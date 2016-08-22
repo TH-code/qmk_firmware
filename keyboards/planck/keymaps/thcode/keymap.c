@@ -40,6 +40,10 @@ enum planck_keycodes {
 #define _______ KC_TRNS
 #define XXXXXXX KC_NO
 
+// Alias with improved size for the keymap
+#define SC_NUHS S(KC_NUHS)
+#define SC_NUBS S(KC_NUBS)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Qwerty
@@ -102,7 +106,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |   `  | Power| Sleep| Wake | Mute | Vol- | Vol+ |   _  |   +  |   {  |   }  |Enter |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      | <<   | >||  | >>   | Sel  | Brit-| Brit+|ISO ~ |ISO | |      |   §  |  |   |
+ * |      | <<   | >||  | >>   | Calc | Brit-| Brit+|ISO ~ |ISO | |      |      |  |   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |             |      | Next | Vol- | Vol+ | Play |
  * `-----------------------------------------------------------------------------------'
@@ -110,7 +114,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = {
   {_______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_DEL },
   {KC_GRV,  KC_PWR,  KC_SLEP, KC_WAKE, KC_MUTE, KC_VOLD, KC_VOLU, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_ENT },
-  {_______, KC_MRWD, KC_MPLY, KC_MFFD, KC_MSEL, BL_DEC,BL_INC,S(KC_NUHS),S(KC_NUBS),_______, BP_SECT, KC_PIPE},
+  {_______, KC_MRWD, KC_MPLY, KC_MFFD, KC_CALC, BL_DEC,  BL_INC,  SC_NUHS, SC_NUBS, _______, _______, KC_PIPE},
   {_______, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY}
 },
 
@@ -120,7 +124,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |   ~  |      |      |      |      |      |      |   -  |   =  |   [  |   ]  |Enter |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |ISO # |ISO / |      |   ±  |  \   |
+ * |      |      |      |      |      |      |      |ISO # |ISO / |      |      |  \   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |             |      | Next | Vol- | Vol+ | Play |
  * `-----------------------------------------------------------------------------------'
@@ -128,7 +132,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_RAISE] = {
   {_______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL },
   {KC_TILD, _______, _______, _______, _______, _______, _______, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_ENT },
-  {_______, _______, _______, _______, _______, _______, _______, KC_NUHS, KC_NUBS, _______, BP_PSMS, KC_BSLS},
+  {_______, _______, _______, _______, _______, _______, _______, KC_NUHS, KC_NUBS, _______, _______, KC_BSLS},
   {_______, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY}
 },
 
@@ -187,11 +191,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______}
 }
 
-
 };
 
 #ifdef AUDIO_ENABLE
-
 float tone_startup[][2]    = SONG(STARTUP_SOUND);
 float tone_qwerty[][2]     = SONG(QWERTY_SOUND);
 float tone_dvorak[][2]     = SONG(DVORAK_SOUND);
@@ -199,10 +201,8 @@ float tone_colemak[][2]    = SONG(COLEMAK_SOUND);
 float tone_plover[][2]     = SONG(PLOVER_SOUND);
 float tone_plover_gb[][2]  = SONG(PLOVER_GOODBYE_SOUND);
 float music_scale[][2]     = SONG(MUSIC_SCALE_SOUND);
-
-float tone_goodbye[][2] = SONG(GOODBYE_SOUND);
+float tone_goodbye[][2]    = SONG(GOODBYE_SOUND);
 #endif
-
 
 void persistant_default_layer_set(uint16_t default_layer) {
   eeconfig_update_default_layer(default_layer);
@@ -309,7 +309,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-void matrix_init_user(void) {
+void matrix_init_user(void)
+{
     #ifdef AUDIO_ENABLE
         startup_user();
     #endif
