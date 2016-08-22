@@ -104,17 +104,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * | Esc  |   !  |   @  |   #  |   $  |   %  |   ^  |   &  |   *  |   (  |   )  | Del  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |   `  | Power| Sleep| Wake | Mute | Vol- | Vol+ |   _  |   +  |   {  |   }  |Enter |
+ * |   `  |   1  |   2  |   3  |   4  |   5  |   -  |   _  |   +  |   {  |   }  |Enter |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      | <<   | >||  | >>   | Calc | Brit-| Brit+|ISO ~ |ISO | |      |      |  |   |
+ * |      |   6  |   7  |   8  |   9  |   0  |   =  |ISO ~ |ISO | |   [  |   ]  |  |   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |             |      | Next | Vol- | Vol+ | Play |
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = {
   {_______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_DEL },
-  {KC_GRV,  KC_PWR,  KC_SLEP, KC_WAKE, KC_MUTE, KC_VOLD, KC_VOLU, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_ENT },
-  {_______, KC_MRWD, KC_MPLY, KC_MFFD, KC_CALC, BL_DEC,  BL_INC,  SC_NUHS, SC_NUBS, _______, _______, KC_PIPE},
+  {KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_MINS, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_ENT },
+  {_______, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_EQL,   SC_NUHS, SC_NUBS, KC_LBRC, KC_RBRC, KC_PIPE},
   {_______, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY}
 },
 
