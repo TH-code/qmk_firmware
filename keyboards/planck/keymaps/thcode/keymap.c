@@ -104,22 +104,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {FUNCTION,KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT}
 },
 
-/* Lower
+/* Lower (Symbols)
  * ,-----------------------------------------------------------------------------------.
- * | Esc  |   !  |   @  |   #  |   $  |   %  |   ^  |   &  |   *  |   (  |   )  | Del  |
+ * | Esc  |      |      |      |      |      |      |      |   (  |   )  |      | Del  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |   `  |   1  |   2  |   3  |   4  |   5  |   -  |   _  |   +  |   {  |   }  |Enter |
+ * |      | 1  ! | 2  @ | 3  # | 4  $ | 5  % | -  _ | §  ± |   {  |   }  | `  ~ |      |  § = ISO /
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      |   6  |   7  |   8  |   9  |   0  |   =  |ISO ~ |ISO | |   [  |   ]  |  |   |
+ * |      | 6  ^ | 7  & | 8  * | 9  ( | 0  ) | =  + | \  | |   [  |   ]  | \  | |Enter |  \ = ISO #
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |             |      | Next | Vol- | Vol+ | Play |
+ * |      |      |      |      |      |             |      | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = {
-  {_______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_DEL },
-  {KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_MINS, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, _______},
-  {_______, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_EQL,  SC_NUHS, SC_NUBS, KC_LBRC, KC_RBRC, KC_PIPE},
-  {_______, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY}
+  {_______, _______, _______, _______, _______, _______, _______, _______, KC_LPRN, KC_RPRN, _______, KC_DEL },
+  {_______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_MINS, KC_NUBS, KC_LCBR, KC_RCBR, KC_GRV,  _______},
+  {_______, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_EQL,  KC_NUHS, KC_LBRC, KC_RBRC, KC_BSLS, _______},
+  {_______, _______, _______, _______, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT}
 },
 
 /* Raise
