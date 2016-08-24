@@ -135,7 +135,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_RAISE] = {
   {_______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL },
-  {KC_TILD, KC_MUTE, KC_VOLD, KC_VOLU, KC_PWR,  KC_SLEP, KC_WAKE, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, _______},
+  {KC_TILD, KC_MUTE, KC_VOLD, KC_VOLU, _______, _______, _______, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, _______},
   {_______, KC_MRWD, KC_MPLY, KC_MFFD, _______, _______, _______, KC_NUHS, KC_NUBS, _______, _______, KC_BSLS},
   {_______, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY}
 },
@@ -189,7 +189,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_ADJUST] = {
-  {_______, RESET,   _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_DEL },
+  {KC_POW,  RESET,   _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_DEL },
   {BACKLIT, _______, _______, AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, _______, _______, _______, _______, _______},
   {_______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  QWERTY,  COLEMAK, DVORAK,  PLOVER,  _______},
   {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______}
