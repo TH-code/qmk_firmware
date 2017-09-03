@@ -31,6 +31,9 @@ uint16_t keycode_config(uint16_t keycode) {
             if (keymap_config.swap_control_capslock) {
                 return KC_CAPSLOCK;
             }
+            if (keymap_config.swap_lctrl_lgui) {
+                return KC_LGUI;
+            }
             return KC_LCTL;
         case KC_LALT:
             if (keymap_config.swap_lalt_lgui) {
@@ -41,6 +44,9 @@ uint16_t keycode_config(uint16_t keycode) {
             }
             return KC_LALT;
         case KC_LGUI:
+            if (keymap_config.swap_lctrl_lgui) {
+                return KC_LCTL;
+            }
             if (keymap_config.swap_lalt_lgui) {
                 return KC_LALT;
             }
@@ -48,6 +54,11 @@ uint16_t keycode_config(uint16_t keycode) {
                 return KC_NO;
             }
             return KC_LGUI;
+        case KC_RCTL:
+            if (keymap_config.swap_rctrl_rgui) {
+                return KC_RGUI;
+            }
+            return KC_RCTL;
         case KC_RALT:
             if (keymap_config.swap_ralt_rgui) {
                 if (keymap_config.no_gui) {
@@ -57,6 +68,9 @@ uint16_t keycode_config(uint16_t keycode) {
             }
             return KC_RALT;
         case KC_RGUI:
+            if (keymap_config.swap_rctrl_rgui) {
+                return KC_RCTL;
+            }
             if (keymap_config.swap_ralt_rgui) {
                 return KC_RALT;
             }
@@ -91,6 +105,24 @@ uint16_t keycode_config(uint16_t keycode) {
 
 uint8_t mod_config(uint8_t mod) {
     keymap_config.raw = eeconfig_read_keymap();
+    if (keymap_config.swap_lctrl_lgui) {
+        if ((mod & MOD_RGUI) == MOD_LGUI) {
+            mod &= ~MOD_LGUI;
+            mod |= MOD_LCTL;
+        } else if ((mod & MOD_RCTL) == MOD_LCTL) {
+            mod &= ~MOD_LCTL;
+            mod |= MOD_LGUI;
+        }
+    }
+    if (keymap_config.swap_rctrl_rgui) {
+        if ((mod & MOD_RGUI) == MOD_RGUI) {
+            mod &= ~MOD_RGUI;
+            mod |= MOD_RCTL;
+        } else if ((mod & MOD_RCTL) == MOD_RCTL) {
+            mod &= ~MOD_RCTL;
+            mod |= MOD_RGUI;
+        }
+    }
     if (keymap_config.swap_lalt_lgui) {
         if ((mod & MOD_RGUI) == MOD_LGUI) {
             mod &= ~MOD_LGUI;

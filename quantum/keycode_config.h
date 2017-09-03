@@ -29,6 +29,8 @@ typedef union {
     uint16_t raw;
     struct {
         bool swap_control_capslock:1;
+        bool swap_lctrl_lgui:1;
+        bool swap_rctrl_rgui:1;
         bool capslock_to_control:1;
         bool swap_lalt_lgui:1;
         bool swap_ralt_rgui:1;

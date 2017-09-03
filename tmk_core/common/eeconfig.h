@@ -47,13 +47,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* keyconf bit */
 #define EECONFIG_KEYMAP_SWAP_CONTROL_CAPSLOCK       (1<<0)
-#define EECONFIG_KEYMAP_CAPSLOCK_TO_CONTROL         (1<<1)
-#define EECONFIG_KEYMAP_SWAP_LALT_LGUI              (1<<2)
-#define EECONFIG_KEYMAP_SWAP_RALT_RGUI              (1<<3)
-#define EECONFIG_KEYMAP_NO_GUI                      (1<<4)
-#define EECONFIG_KEYMAP_SWAP_GRAVE_ESC              (1<<5)
-#define EECONFIG_KEYMAP_SWAP_BACKSLASH_BACKSPACE    (1<<6)
-#define EECONFIG_KEYMAP_NKRO                        (1<<7)
+#define EECONFIG_KEYMAP_SWAP_LCTRL_LGUI             (1<<1)
+#define EECONFIG_KEYMAP_SWAP_RCTRL_RGUI             (1<<2)
+#define EECONFIG_KEYMAP_CAPSLOCK_TO_CONTROL         (1<<3)
+#define EECONFIG_KEYMAP_SWAP_LALT_LGUI              (1<<4)
+#define EECONFIG_KEYMAP_SWAP_RALT_RGUI              (1<<5)
+#define EECONFIG_KEYMAP_NO_GUI                      (1<<6)
+#define EECONFIG_KEYMAP_SWAP_GRAVE_ESC              (1<<7)
+#define EECONFIG_KEYMAP_SWAP_BACKSLASH_BACKSPACE    (1<<8)
+#define EECONFIG_KEYMAP_NKRO                        (1<<9)
 
 
 bool eeconfig_is_enabled(void);

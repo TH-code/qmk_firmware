@@ -213,6 +213,8 @@ When defining a [keymap](keymap.md) each key needs a valid key definition. This 
 |[`M(n)`](quantum_keycodes.md#qmk-keycodes)||to call macro n|
 |[`MACROTAP(n)`](quantum_keycodes.md#qmk-keycodes)||to macro-tap n idk FIXME`|
 |[`MAGIC_SWAP_CONTROL_CAPSLOCK`](feature_bootmagic.md)||Swap Capslock and Left Control|
+|[`MAGIC_SWAP_LCTRL_LGUI`](feature_bootmagic.md)||Swap the left Ctrl and GUI keys|
+|[`MAGIC_SWAP_RCTRL_RGUI`](feature_bootmagic.md)||Swap the right Ctrl and GUI keys|
 |[`MAGIC_CAPSLOCK_TO_CONTROL`](feature_bootmagic.md)||Treat Capslock like a Control Key|
 |[`MAGIC_SWAP_LALT_LGUI`](feature_bootmagic.md)||Swap the left Alt and GUI keys|
 |[`MAGIC_SWAP_RALT_RGUI`](feature_bootmagic.md)||Swap the right Alt and GUI keys|
@@ -220,8 +222,11 @@ When defining a [keymap](keymap.md) each key needs a valid key definition. This 
 |[`MAGIC_SWAP_GRAVE_ESC`](feature_bootmagic.md)||Swap the Grave and Esc key.|
 |[`MAGIC_SWAP_BACKSLASH_BACKSPACE`](feature_bootmagic.md)||Swap backslack and backspace|
 |[`MAGIC_HOST_NKRO`](feature_bootmagic.md)||Force NKRO on|
+|[`MAGIC_SWAP_CONTROL_COMMAND`/`CC_SWAP`](feature_bootmagic.md)||Swap Control and Gui on both sides|
 |[`MAGIC_SWAP_ALT_GUI`/`AG_SWAP`](feature_bootmagic.md)||Swap Alt and Gui on both sides|
 |[`MAGIC_UNSWAP_CONTROL_CAPSLOCK`](feature_bootmagic.md)||Disable the Control/Capslock swap|
+|[`MAGIC_UNSWAP_LCTRL_LGUI`](feature_bootmagic.md)||Disable Left Ctrl and GUI switching|
+|[`MAGIC_UNSWAP_RCTRL_RGUI`](feature_bootmagic.md)||Disable Right Ctrl and GUI switching|
 |[`MAGIC_UNCAPSLOCK_TO_CONTROL`](feature_bootmagic.md)||Disable treating Capslock like Control |
 |[`MAGIC_UNSWAP_LALT_LGUI`](feature_bootmagic.md)||Disable Left Alt and GUI switching|
 |[`MAGIC_UNSWAP_RALT_RGUI`](feature_bootmagic.md)||Disable Right Alt and GUI switching|
@@ -229,6 +234,7 @@ When defining a [keymap](keymap.md) each key needs a valid key definition. This 
 |[`MAGIC_UNSWAP_GRAVE_ESC`](feature_bootmagic.md)||Disable the Grave/Esc swap |
 |[`MAGIC_UNSWAP_BACKSLASH_BACKSPACE`](feature_bootmagic.md)||Disable the backslash/backspace swap|
 |[`MAGIC_UNHOST_NKRO`](feature_bootmagic.md)||Force NKRO off|
+|[`MAGIC_UNSWAP_CONTROL_COMMAND`/`CC_NORM`](feature_bootmagic.md)||Disable the Control/GUI switching|
 |[`MAGIC_UNSWAP_ALT_GUI`/`AG_NORM`](feature_bootmagic.md)||Disable the Alt/GUI switching|
 |[`MAGIC_TOGGLE_NKRO`](feature_bootmagic.md)||Turn NKRO on or off|
 |[`BL_x`](feature_backlight.md)||Set a specific backlight level between 0-9|

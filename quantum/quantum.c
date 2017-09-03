@@ -363,6 +363,13 @@ bool process_record_quantum(keyrecord_t *record) {
           case MAGIC_SWAP_CONTROL_CAPSLOCK:
             keymap_config.swap_control_capslock = true;
             break;
+          case MAGIC_SWAP_CONTROL_COMMAND:
+            keymap_config.swap_lctrl_lgui = true;
+            keymap_config.swap_rctrl_rgui = true;
+            #ifdef AUDIO_ENABLE
+              PLAY_SONG(ag_swap_song);
+            #endif
+            break;
           case MAGIC_CAPSLOCK_TO_CONTROL:
             keymap_config.capslock_to_control = true;
             break;
@@ -393,6 +400,13 @@ bool process_record_quantum(keyrecord_t *record) {
             break;
           case MAGIC_UNSWAP_CONTROL_CAPSLOCK:
             keymap_config.swap_control_capslock = false;
+            break;
+          case MAGIC_UNSWAP_CONTROL_COMMAND:
+            keymap_config.swap_lctrl_lgui = false;
+            keymap_config.swap_rctrl_rgui = false;
+            #ifdef AUDIO_ENABLE
+              PLAY_SONG(ag_norm_song);
+            #endif
             break;
           case MAGIC_UNCAPSLOCK_TO_CONTROL:
             keymap_config.capslock_to_control = false;

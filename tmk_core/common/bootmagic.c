@@ -60,6 +60,12 @@ void bootmagic(void)
     if (bootmagic_scan_keycode(BOOTMAGIC_KEY_SWAP_CONTROL_CAPSLOCK)) {
         keymap_config.swap_control_capslock = !keymap_config.swap_control_capslock;
     }
+    if (bootmagic_scan_keycode(BOOTMAGIC_KEY_SWAP_LCTRL_LGUI)) {
+        keymap_config.swap_lctrl_lgui = !keymap_config.swap_lctrl_lgui;
+    }
+    if (bootmagic_scan_keycode(BOOTMAGIC_KEY_SWAP_RCTRL_RGUI)) {
+        keymap_config.swap_rctrl_rgui = !keymap_config.swap_rctrl_rgui;
+    }
     if (bootmagic_scan_keycode(BOOTMAGIC_KEY_CAPSLOCK_TO_CONTROL)) {
         keymap_config.capslock_to_control = !keymap_config.capslock_to_control;
     }
@@ -93,6 +99,8 @@ void bootmagic(void)
     if (bootmagic_scan_keycode(BOOTMAGIC_KEY_DEFAULT_LAYER_5)) { default_layer |= (1<<5); }
     if (bootmagic_scan_keycode(BOOTMAGIC_KEY_DEFAULT_LAYER_6)) { default_layer |= (1<<6); }
     if (bootmagic_scan_keycode(BOOTMAGIC_KEY_DEFAULT_LAYER_7)) { default_layer |= (1<<7); }
+    if (bootmagic_scan_keycode(BOOTMAGIC_KEY_DEFAULT_LAYER_8)) { default_layer |= (1<<8); }
+    if (bootmagic_scan_keycode(BOOTMAGIC_KEY_DEFAULT_LAYER_9)) { default_layer |= (1<<9); }
     if (default_layer) {
         eeconfig_update_default_layer(default_layer);
         default_layer_set((uint32_t)default_layer);

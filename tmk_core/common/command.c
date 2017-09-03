@@ -282,6 +282,8 @@ static void print_eeconfig(void)
     kc.raw = eeconfig_read_keymap();
     print("keymap_config.raw: "); print_hex8(kc.raw); print("\n");
     print(".swap_control_capslock: "); print_dec(kc.swap_control_capslock); print("\n");
+    print(".swap_lctrl_lgui: "); print_dec(kc.swap_lctrl_lgui); print("\n");
+    print(".swap_rctrl_rgui: "); print_dec(kc.swap_rctrl_rgui); print("\n");
     print(".capslock_to_control: "); print_dec(kc.capslock_to_control); print("\n");
     print(".swap_lalt_lgui: "); print_dec(kc.swap_lalt_lgui); print("\n");
     print(".swap_ralt_rgui: "); print_dec(kc.swap_ralt_rgui); print("\n");
