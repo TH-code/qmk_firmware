@@ -45,14 +45,13 @@ enum planck_keycodes {
   EXT_PLV
 };
 
+// Custom key definitions
+// ============================================================================
+
 // WTF???: Why are the ESC and GRV switched... The original keymap still works
 //         as expected. Redefining solves it, but why does this happen? 
 #define TH_ESC KC_GRV
 #define TH_GRV KC_ESC
-
-// Fillers to make layering more clear
-#define _______ KC_TRNS
-#define XXXXXXX KC_NO
 
 // Alias with improved size for the keymap
 #define SC_NUHS S(KC_NUHS)
@@ -60,6 +59,8 @@ enum planck_keycodes {
 
 // Special modifiers
 #define SFT_ENT MT(MOD_LSFT, KC_ENT)
+
+// ============================================================================
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
