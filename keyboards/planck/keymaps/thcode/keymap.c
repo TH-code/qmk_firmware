@@ -14,13 +14,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// #include "keymap_bepo.h"
+// #include "eeconfig.h"
+
 #include "planck.h"
-#include "keymap_bepo.h"
 #include "action_layer.h"
-#ifdef AUDIO_ENABLE
-  #include "audio.h"
-#endif
-#include "eeconfig.h"
 
 extern keymap_config_t keymap_config;
 
