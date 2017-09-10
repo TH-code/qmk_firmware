@@ -49,7 +49,9 @@ enum planck_keycodes {
 // ============================================================================
 
 // WTF???: Why are the ESC and GRV switched... The original keymap still works
-//         as expected. Redefining solves it, but why does this happen? 
+//         as expected. Redefining solves it, but why does this happen?
+//         Funnily enough this mod is only needed for my rev4 planck, my rev2
+//         works as expected without.
 #define TH_ESC KC_GRV
 #define TH_GRV KC_ESC
 
