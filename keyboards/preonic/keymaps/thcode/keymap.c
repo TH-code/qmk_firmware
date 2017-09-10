@@ -35,6 +35,18 @@ enum preonic_keycodes {
   BACKLIT
 };
 
+// Custom key definitions
+// ============================================================================
+
+// Alias with improved size for the keymap
+#define SC_NUHS S(KC_NUHS)
+#define SC_NUBS S(KC_NUBS)
+
+// Special modifiers
+#define SFT_ENT MT(MOD_LSFT, KC_ENT)
+
+// ============================================================================
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Qwerty
